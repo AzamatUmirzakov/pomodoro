@@ -1,4 +1,8 @@
 // ⌛pomodoro timer⏳
+
+// == root
+let root = document.documentElement;
+
 let interval = null; // interval changing time
 let changeTimeButtons = document.querySelectorAll("button.change-time"); // buttons changing time periods
 let timerMinutes = null; // time period minutes
@@ -21,12 +25,12 @@ start.addEventListener("click", () => {
                 }
             }
             currentSeconds.innerHTML = parseInt(currentSeconds.innerHTML) - 1;
-            if (parseInt(currentSeconds) < 10) {
+            if (parseInt(currentSeconds.innerHTML) < 10) {
                 currentSeconds.innerHTML = "0" + currentSeconds.innerHTML;
             }
             document.head.querySelector(
                 "title"
-            ).innerHTML = `${currentMinutes.innerHTML} : ${currentSeconds.innerHTML}`;
+            ).innerHTML = `🍅${currentMinutes.innerHTML} : ${currentSeconds.innerHTML}🍅`;
             if (
                 parseInt(currentMinutes.innerHTML) == 0 &&
                 parseInt(currentSeconds.innerHTML) == 0
@@ -36,7 +40,7 @@ start.addEventListener("click", () => {
                 clearInterval(interval);
                 setTimeout(() => {
                     start.dispatchEvent(new Event("click"));
-                }, 6000);
+                }, 5000);
             }
         }, 1000);
     } else {
@@ -77,39 +81,18 @@ for (let changeTimeButton of changeTimeButtons) {
     // changing background and colors
     if (changeTimeButton.dataset.type == "pomodoro") {
         changeTimeButton.addEventListener("click", () => {
-            document.body.style.background = "#F05B56";
-            document.querySelector("button.start").style.color = "#F05B56";
-            document.querySelector("div.settings").style.background = "#f26c67";
-            document.querySelector("button.apply").style.color = "#f26c67";
-            for (let input of document.querySelectorAll(
-                "div.settings > label > input"
-            )) {
-                input.style.color = "#f26c67";
-            }
+            root.style.setProperty("--main-color", "#f05b56");
+            root.style.setProperty("--secondary-color", "#f26c67");
         });
     } else if (changeTimeButton.dataset.type == "short") {
         changeTimeButton.addEventListener("click", () => {
-            document.body.style.background = "#00D969";
-            document.querySelector("button.start").style.color = "#00D969";
-            document.querySelector("div.settings").style.background = "#00F074";
-            document.querySelector("button.apply").style.color = "#00F074";
-            for (let input of document.querySelectorAll(
-                "div.settings > label > input"
-            )) {
-                input.style.color = "#00F074";
-            }
+            root.style.setProperty("--main-color", "#00D969");
+            root.style.setProperty("--secondary-color", "#00F074");
         });
     } else {
         changeTimeButton.addEventListener("click", () => {
-            document.body.style.background = "#498FC1";
-            document.querySelector("button.start").style.color = "#498FC1";
-            document.querySelector("div.settings").style.background = "#5C9AC7";
-            document.querySelector("button.apply").style.color = "#5C9AC7";
-            for (let input of document.querySelectorAll(
-                "div.settings > label > input"
-            )) {
-                input.style.color = "#5C9AC7";
-            }
+            root.style.setProperty("--main-color", "#498FC1");
+            root.style.setProperty("--secondary-color", "#5C9AC7");
         });
     }
 }
