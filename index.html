@@ -16,7 +16,7 @@
     <div class="timer">
       <nav class="timer-buttons">
         <button class="change-time active" data-type="pomodoro" data-time="25">pomodoro</button>
-        <button class="change-time" data-type="short" data-time="5">short break</button>
+        <button class="change-time" data-type="short" data-time="05">short break</button>
         <button class="change-time" data-type="long" data-time="15">long break</button>
       </nav>
       <div class="timer-time">
@@ -27,9 +27,22 @@
       <button class="start" data-action='start'>start</button>
     </div>
   </main>
-  <section class="tasks">
-
-  </section>
+  <img src="images/settings.svg" alt="settings" class="settings-button" data-action="show">
+  <div class="settings">
+    <label for="pomodoro-time">
+      <input type="number" name='pomodoro-time' class="pomodoro-input">
+      Enter pomodoro time
+    </label>
+    <label for="short-break">
+      <input type="number" name='short-break' class="short-input">
+      Enter short break time
+    </label>
+    <label for="long-break">
+      <input type="number" name='long-break' class="long-input">
+      Enter long break time
+    </label>
+    <button class="apply">apply</button>
+  </div>
   <script src="index.js"></script>
 </body>
 
