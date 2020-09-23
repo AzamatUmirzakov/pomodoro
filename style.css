@@ -465,6 +465,9 @@ button.remove-done:hover {
 }
 
 @media (max-width:  510px) {
+    div.settings {
+        top: 100px;
+    }
     div.timer-time {
         font-size: 100px;
     }
