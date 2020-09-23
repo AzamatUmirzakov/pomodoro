@@ -56,7 +56,7 @@ nav.timer-buttons > button {
   display: inline-block;
   border-radius: 10px;
   color: white;
-  font-size: 20px;
+  font-size: 30px;
   font-family: "Open Sans";
 }
 
@@ -135,6 +135,7 @@ div.settings > label > input {
   margin-right: 20px;
   font-family: "Open Sans";
   font-size: 18px;
+  color: var(--secondary-color);
 }
 
 button.apply {
@@ -350,4 +351,127 @@ div.tasks-list > div::before {
   background: #fff;
   opacity: 0;
   transition: all 0.5s ease-in-out;
+}
+
+button.remove-done {
+    background: var(--main-color);
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: "Open Sans";
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+button.remove-done:hover {
+    background: white;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+/* == MEDIA QUERIES == */
+
+@media (max-width: 1650px) {
+    div.settings {
+        top: 200px;
+    }
+    div.settings > label {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid white;
+        padding-bottom: 20px;
+    }
+    div.settings > label > input {
+        margin-bottom: 20px;
+    }
+
+    div.add-task {
+        width: 100%;
+    }
+
+    div.task-item {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 1035px) {
+    div.timer {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 730px) {
+    img.img-button {
+        width: 35px;
+        height: 35px;
+        top: 25px;
+    }
+    img.settings-button {
+        left: 25px;
+    }
+    img.tasks-button {
+        right: 25px;
+    }
+    header.main-header {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 700px) {
+    main.content {
+        padding-bottom: 0;
+    }
+
+    div.timer-time {
+        font-size: 150px;
+    }
+    header.main-header > h1 {
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    section.tasks    {
+        width: 100%;
+    }
+
+    div.add-task {
+        flex-direction: column;
+    }
+    div.add-task > input {
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        margin-bottom: 20px;
+    }
+    div.add-task > button {
+        width: 100%;
+        box-sizing: border-box;
+        border-left: none;
+        padding: 10px 40px;
+    }
+    button.remove-done {
+        padding: 10px 0;
+    }
+    nav.timer-buttons > button {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:  510px) {
+    div.timer-time {
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 450px) {
+    nav.timer-buttons > button {
+        font-size: 15px;
+    }
 }

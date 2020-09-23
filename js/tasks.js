@@ -47,3 +47,15 @@ document.addEventListener("click", (e) => {
     }
   }
 });
+
+
+// remove done tasks
+
+let removeButton = document.querySelector('button.remove-done');
+removeButton.addEventListener('click', () => {
+let doneTasks = document.querySelectorAll('div.task-item.done');
+
+for (let doneTask of Array.from(doneTasks)) {
+  doneTask.remove();
+}
+});

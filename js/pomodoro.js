@@ -108,9 +108,6 @@ let current = document.querySelector("button.change-time.active").dataset.type;
 // initial time change
 timer.querySelector("span.minutes").innerHTML = timerMinutes;
 timer.querySelector("span.seconds").innerHTML = "00";
-for (let input of document.querySelectorAll("div.settings > label > input")) {
-    input.style.color = "#f26c67";
-}
 // settings button
 let settingsButton = document.querySelector("img.settings-button");
 
@@ -137,6 +134,16 @@ applyButton.addEventListener("click", () => {
     }
     if (document.querySelector("input.long-input").value == "") {
         document.querySelector("input.long-input").value = "15";
+    }
+
+    if (parseInt(document.querySelector("input.pomodoro-input").value) < 10) {
+        document.querySelector("input.pomodoro-input").value = '0' + document.querySelector("input.pomodoro-input").value;
+    }
+    if (parseInt(document.querySelector("input.short-input").value) < 10) {
+        document.querySelector("input.short-input").value = '0' + document.querySelector("input.short-input").value;
+    }
+    if (parseInt(document.querySelector("input.long-input").value) < 10) {
+        document.querySelector("input.long-input").value = '0' + document.querySelector("input.long-input").value;
     }
     changeTimeButtons[0].dataset.time = document.querySelector(
         "input.pomodoro-input"

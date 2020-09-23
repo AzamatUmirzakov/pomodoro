@@ -32,7 +32,7 @@
       <button class="start" data-action='start'>start</button>
     </div>
   </main>
-  <img src="images/settings.svg" alt="settings" class="settings-button" data-action="show">
+  <img src="images/settings.svg" alt="settings" class="settings-button img-button" data-action="show">
   <div class="settings">
     <label for="pomodoro-time">
       <input type="number" name='pomodoro-time' class="pomodoro-input">
@@ -48,7 +48,7 @@
     </label>
     <button class="apply">apply</button>
   </div>
-  <img src="images/checkbox.svg" alt="tasks" data-action="show" class="tasks-button">
+  <img src="images/checkbox.svg" alt="tasks" data-action="show" class="tasks-button img-button">
   <section class="tasks">
     <h1>Tasks</h1>
     <div class="tasks-list"></div>
@@ -56,6 +56,7 @@
       <input type="text" name="task-content" class="task-content-input" placeholder="New task...">
       <button class="task-push">add</button>
     </div>
+    <button class="remove-done">remove done tasks</button>
   </section>
   <script src="js/pomodoro.js"></script>
   <script src="js/tasks.js"></script>
