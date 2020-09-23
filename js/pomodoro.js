@@ -152,6 +152,9 @@ applyButton.addEventListener("click", () => {
     if (parseInt(document.querySelector('span.minutes').innerHTML) < 10) {
         document.querySelector('span.minutes').innerHTML = '0' + document.querySelector('span.minutes').innerHTML; 
     }
+    if (parseInt(document.querySelector('span.minutes').innerHTML) > 240) {
+        document.querySelector('span.minutes').innerHTML = 240;
+    }
     settingsButton.dispatchEvent(new Event('click'));
 
 });

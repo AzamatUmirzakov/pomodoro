@@ -173,13 +173,12 @@ button.apply:hover {
 section.tasks {
   background: var(--secondary-color);
   padding: 30px;
-  position: absolute;
+  position: fixed;
+  top: 0px;
+  right: -500px;
   height: 100%;
   box-sizing: border-box;
   width: 50%;
-  top: 0px;
-  right: -100%;
-  overflow-y: auto;
 }
 
 section.tasks > h1 {
