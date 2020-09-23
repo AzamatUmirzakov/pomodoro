@@ -135,16 +135,6 @@ applyButton.addEventListener("click", () => {
     if (document.querySelector("input.long-input").value == "") {
         document.querySelector("input.long-input").value = "15";
     }
-
-    if (parseInt(document.querySelector("input.pomodoro-input").value) < 10) {
-        document.querySelector("input.pomodoro-input").value = '0' + document.querySelector("input.pomodoro-input").value;
-    }
-    if (parseInt(document.querySelector("input.short-input").value) < 10) {
-        document.querySelector("input.short-input").value = '0' + document.querySelector("input.short-input").value;
-    }
-    if (parseInt(document.querySelector("input.long-input").value) < 10) {
-        document.querySelector("input.long-input").value = '0' + document.querySelector("input.long-input").value;
-    }
     changeTimeButtons[0].dataset.time = document.querySelector(
         "input.pomodoro-input"
     ).value;
@@ -159,4 +149,9 @@ applyButton.addEventListener("click", () => {
     );
     timer.querySelector("span.minutes").innerHTML = timerMinutes;
     timer.querySelector("span.seconds").innerHTML = "00";
+    if (parseInt(document.querySelector('span.minutes').innerHTML) < 10) {
+        document.querySelector('span.minutes').innerHTML = '0' + document.querySelector('span.minutes').innerHTML; 
+    }
+    settingsButton.dispatchEvent(new Event('click'));
+
 });
