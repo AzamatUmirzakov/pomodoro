@@ -175,10 +175,11 @@ section.tasks {
   padding: 30px;
   position: fixed;
   top: 0px;
-  right: -500px;
+  right: -1000px;
   height: 100%;
   box-sizing: border-box;
   width: 50%;
+  overflow-y: auto;
 }
 
 section.tasks > h1 {
